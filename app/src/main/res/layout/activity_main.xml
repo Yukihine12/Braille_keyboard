@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:background="@color/background"
+    android:layout_height="match_parent">
+
+    <!-- ImageView pertama: dictionary -->
+    <ImageView
+        android:id="@+id/dictionary"
+        android:layout_width="0dp"
+        android:layout_height="240dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="60dp"
+        android:onClick="goToDictionaryPage"
+        android:src="@drawable/dictionary"
+        app:layout_constraintEnd_toStartOf="@id/learning"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.25"
+        tools:ignore="ContentDescription,SpeakableTextPresentCheck" /> <!-- 25% dari lebar layar -->
+
+    <!-- ImageView kedua: learning -->
+    <ImageView
+        android:id="@+id/learning"
+        android:layout_width="0dp"
+        android:layout_height="240dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="60dp"
+        android:onClick="goToItemListPage"
+        android:src="@drawable/learning"
+        app:layout_constraintEnd_toStartOf="@id/resume"
+        app:layout_constraintStart_toEndOf="@id/dictionary"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.25"
+        tools:ignore="ContentDescription,SpeakableTextPresentCheck" /> <!-- 25% dari lebar layar -->
+
+    <!-- ImageView ketiga: level -->
+    <ImageView
+        android:id="@+id/resume"
+        android:layout_width="0dp"
+        android:layout_height="240dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="60dp"
+        android:onClick="goToResumePage"
+        android:src="@drawable/resume"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/learning"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.25"
+        tools:ignore="ContentDescription,SpeakableTextPresentCheck" /> <!-- 25% dari lebar layar -->
+
+</androidx.constraintlayout.widget.ConstraintLayout>
