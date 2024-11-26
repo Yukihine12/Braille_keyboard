@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">Braille keyboard</string>
+    <string name="top_left_circle">Top left circle</string>
+    <string name="center_left_circle">Center left circle</string>
+    <string name="bottom_left_circle">Bottom left circle</string>
+    <string name="top_right_circle">Top right circle</string>
+    <string name="center_right_circle">Center right circle</string>
+    <string name="bottom_right_circle">Bottom right circle</string>
+    <string name="_2">2</string>
+    <string name="_1">1</string>
+    <string name="_6">6</string>
+    <string name="_5">5</string>
+    <string name="_4">4</string>
+    <string name="_3">3</string>
 </resources>

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
@@ -9,7 +8,6 @@
     android:layout_height="match_parent"
     tools:context=".DetailActivity">
 
-
     <RelativeLayout
         android:id="@+id/detail"
         android:layout_width="match_parent"
@@ -17,6 +15,7 @@
         android:padding="16dp">
 
         <!-- Nama atau teks di bagian atas -->
+
         <TextView
             android:id="@+id/nameTextView"
             android:layout_width="wrap_content"
@@ -28,83 +27,148 @@
             android:textSize="20sp"
             android:textStyle="bold" />
 
-        <!-- Buletan di kiri atas -->
-        <ImageView
-            android:id="@+id/buletTopLeft"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_marginTop="40dp"
-            android:layout_marginStart="50dp"
-            android:src="@drawable/bulet" />
 
-        <!-- Buletan di kiri tengah -->
-
-        <!-- Buletan di kiri bawah -->
-        <ImageView
-            android:id="@+id/buletCenterLeft"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_below="@id/buletTopLeft"
-            android:layout_alignStart="@id/buletTopLeft"
-            android:layout_marginStart="56dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="50dp"
-            android:src="@drawable/bulet" />
-
-        <!-- Buletan di kanan atas -->
-        <ImageView
-            android:id="@+id/buletBottomLeft"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_below="@id/buletCenterLeft"
-            android:layout_alignStart="@id/buletCenterLeft"
-            android:layout_marginStart="-57dp"
-            android:layout_marginTop="10dp"
-            android:src="@drawable/bulet" />
-
-        <ImageView
-            android:id="@+id/buletTopRight"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_alignTop="@id/buletTopLeft"
+        <FrameLayout
+            android:id="@+id/braille_key_1"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/braille_key_4"
             android:layout_alignParentEnd="true"
-            android:layout_marginEnd="50dp"
-            android:src="@drawable/bulet" />
+            android:paddingVertical="15dp"
+            android:clickable="true"
+            android:focusable="true">
 
-        <!-- Buletan di kanan tengah -->
+            <TextView
+                android:id="@+id/imageTopRight"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_marginEnd="150dp"
+                android:layout_gravity="end"
+                android:contentDescription="@string/top_right_circle"
+                android:background="@drawable/circle_default"
+                android:gravity="center"
+                android:text="@string/_1"
+                android:textColor="@android:color/white"
+                android:textSize="24sp"/>
+        </FrameLayout>
 
-        <!-- Buletan di kanan bawah -->
+        <FrameLayout
+            android:id="@+id/braille_key_2"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/braille_key_1"
+            android:layout_alignEnd="@id/braille_key_1"
+            android:paddingVertical="15dp">
 
-        <ImageView
-            android:id="@+id/buletCenterRight"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_below="@id/buletTopRight"
-            android:layout_alignEnd="@id/buletTopRight"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="56dp"
-            android:src="@drawable/bulet" />
+            <TextView
+                android:id="@+id/imageCenterRight"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_marginEnd="150dp"
+                android:layout_gravity="end"
+                android:contentDescription="@string/center_right_circle"
+                android:background="@drawable/circle_default"
+                android:gravity="center"
+                android:text="@string/_2"
+                android:textColor="@android:color/white"
+                android:textSize="24sp"/>
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/braille_key_3"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/braille_key_2"
+            android:layout_alignEnd="@id/braille_key_2"
+            android:paddingVertical="15dp">
+
+            <TextView
+                android:id="@+id/imageBottomRight"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_marginEnd="150dp"
+                android:layout_gravity="end"
+                android:layout_marginTop="10dp"
+                android:contentDescription="@string/bottom_right_circle"
+                android:background="@drawable/circle_default"
+                android:gravity="center"
+                android:text="@string/_3"
+                android:textColor="@android:color/white"
+                android:textSize="24sp"/>
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/braille_key_4"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:paddingVertical="15dp">
+
+            <TextView
+                android:id="@+id/imageTopLeft"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_marginStart="150dp"
+                android:contentDescription="@string/top_left_circle"
+                android:background="@drawable/circle_default"
+                android:gravity="center"
+                android:text="@string/_4"
+                android:textColor="@android:color/white"
+                android:textSize="24sp"/>
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/braille_key_5"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/braille_key_4"
+            android:paddingVertical="15dp">
+
+            <TextView
+                android:id="@+id/imageCenterLeft"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_marginStart="150dp"
+                android:contentDescription="@string/center_left_circle"
+                android:background="@drawable/circle_default"
+                android:gravity="center"
+                android:text="@string/_5"
+                android:textColor="@android:color/white"
+                android:textSize="24sp"/>
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/braille_key_6"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/braille_key_5"
+            android:layout_alignStart="@id/braille_key_5"
+            android:paddingVertical="15dp">
+
+            <TextView
+                android:id="@+id/imageBottomLeft"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_marginStart="150dp"
+                android:contentDescription="@string/bottom_left_circle"
+                android:background="@drawable/circle_default"
+                android:gravity="center"
+                android:text="@string/_6"
+                android:textColor="@android:color/white"
+                android:textSize="24sp"/>
+        </FrameLayout>
+
 
         <!-- Nomor di tengah -->
-        <ImageView
-            android:id="@+id/buletBottomRight"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_below="@id/buletCenterRight"
-            android:layout_alignEnd="@id/buletCenterRight"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="-60dp"
-            android:src="@drawable/bulet" />
-
         <TextView
-            android:id="@+id/numberTextView"
+            android:id="@+id/outputTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="6"
+            android:text=""
             android:textSize="48sp"
             android:textColor="@android:color/black"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:visibility="visible" />
 
 
 

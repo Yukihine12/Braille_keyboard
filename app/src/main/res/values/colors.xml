@@ -3,4 +3,6 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="background">#11384a</color>
+    <color name="color_normal">#636580</color> <!-- Biru normal -->
+    <color name="color_pressed">#aaabbd</color> <!-- Merah saat ditekan -->
 </resources>
