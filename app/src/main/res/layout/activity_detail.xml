@@ -27,14 +27,26 @@
             android:textSize="20sp"
             android:textStyle="bold" />
 
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:textColor="@color/white"
+            android:hint="Ketikan sesuatu..."
+            android:inputType="text"
+            android:focusable="true"/>
+
+
 
         <FrameLayout
             android:id="@+id/braille_key_1"
-            android:layout_width="300dp"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_alignTop="@id/braille_key_4"
             android:layout_alignParentEnd="true"
-            android:paddingVertical="15dp"
+            android:paddingVertical="18dp"
             android:clickable="true"
             android:focusable="true">
 
@@ -54,11 +66,11 @@
 
         <FrameLayout
             android:id="@+id/braille_key_2"
-            android:layout_width="300dp"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_below="@id/braille_key_1"
             android:layout_alignEnd="@id/braille_key_1"
-            android:paddingVertical="15dp">
+            android:paddingVertical="18dp">
 
             <TextView
                 android:id="@+id/imageCenterRight"
@@ -76,11 +88,11 @@
 
         <FrameLayout
             android:id="@+id/braille_key_3"
-            android:layout_width="300dp"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_below="@id/braille_key_2"
             android:layout_alignEnd="@id/braille_key_2"
-            android:paddingVertical="15dp">
+            android:paddingVertical="18dp">
 
             <TextView
                 android:id="@+id/imageBottomRight"
@@ -88,7 +100,6 @@
                 android:layout_height="70dp"
                 android:layout_marginEnd="150dp"
                 android:layout_gravity="end"
-                android:layout_marginTop="10dp"
                 android:contentDescription="@string/bottom_right_circle"
                 android:background="@drawable/circle_default"
                 android:gravity="center"
@@ -99,9 +110,9 @@
 
         <FrameLayout
             android:id="@+id/braille_key_4"
-            android:layout_width="300dp"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
-            android:paddingVertical="15dp">
+            android:paddingVertical="18dp">
 
             <TextView
                 android:id="@+id/imageTopLeft"
@@ -118,10 +129,10 @@
 
         <FrameLayout
             android:id="@+id/braille_key_5"
-            android:layout_width="300dp"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_below="@id/braille_key_4"
-            android:paddingVertical="15dp">
+            android:paddingVertical="18dp">
 
             <TextView
                 android:id="@+id/imageCenterLeft"
@@ -138,11 +149,11 @@
 
         <FrameLayout
             android:id="@+id/braille_key_6"
-            android:layout_width="300dp"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_below="@id/braille_key_5"
             android:layout_alignStart="@id/braille_key_5"
-            android:paddingVertical="15dp">
+            android:paddingVertical="18dp">
 
             <TextView
                 android:id="@+id/imageBottomLeft"
@@ -169,7 +180,6 @@
             android:textColor="@android:color/black"
             android:textStyle="bold"
             android:visibility="visible" />
-
 
 
     </RelativeLayout>

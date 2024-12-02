@@ -24,6 +24,7 @@ import android.os.VibrationEffect
 import android.os.Vibrator
 import androidx.annotation.RequiresApi
 import android.speech.tts.TextToSpeech
+import android.widget.EditText
 import java.util.Locale
 
 
@@ -32,7 +33,7 @@ class DetailActivity : AppCompatActivity(), TextToSpeech.OnInitListener  {
 
     private val pressedKeys = mutableSetOf<Int>()  // To track the pressed keys
     private var outputString = ""
-
+    private lateinit var editText: EditText
     private lateinit var outputTextView: TextView
     // Mapping from Braille patterns (in terms of key presses) to letters
     private val brailleMapping = mapOf(
@@ -134,16 +135,35 @@ class DetailActivity : AppCompatActivity(), TextToSpeech.OnInitListener  {
         val brailleKey6: FrameLayout = findViewById(R.id.braille_key_6)
         val circleTextView6: TextView = findViewById(R.id.imageBottomLeft)
 
-        setTouchListener(brailleKey1, circleTextView1, 1)
-        setTouchListener(brailleKey2, circleTextView2, 2)
-        setTouchListener(brailleKey3, circleTextView3, 3)
-        setTouchListener(brailleKey4, circleTextView4, 4)
-        setTouchListener(brailleKey5, circleTextView5, 5)
-        setTouchListener(brailleKey6, circleTextView6, 6)
+
+        editText = findViewById(R.id.editText)
+
+        setTouchListener(brailleKey1, circleTextView1, 1, editText)
+        setTouchListener(brailleKey2, circleTextView2, 2, editText)
+        setTouchListener(brailleKey3, circleTextView3, 3, editText)
+        setTouchListener(brailleKey4, circleTextView4, 4, editText)
+        setTouchListener(brailleKey5, circleTextView5, 5, editText)
+        setTouchListener(brailleKey6, circleTextView6, 6, editText)
 
 
         // Example of checking the pressed keys and getting the letter
-        textToSpeech = TextToSpeech(this, this)
+        textToSpeech = TextToSpeech(this) { status ->
+            if (status == TextToSpeech.SUCCESS) {
+                // Setel bahasa ke bahasa Indonesia
+                val locale = Locale("id", "ID")
+                val languageStatus = textToSpeech.setLanguage(locale)
+
+                if (languageStatus == TextToSpeech.LANG_MISSING_DATA || languageStatus == TextToSpeech.LANG_NOT_SUPPORTED) {
+                    Log.e("TTS", "Bahasa Indonesia tidak didukung atau data tidak lengkap.")
+                } else {
+                    Log.d("TTS", "Bahasa Indonesia berhasil disetel.")
+                }
+            } else {
+                Log.e("TTS", "Text-to-Speech initialization failed!")
+            }
+        }
+
+
     }
 
     override fun onInit(status: Int) {
@@ -172,7 +192,12 @@ class DetailActivity : AppCompatActivity(), TextToSpeech.OnInitListener  {
     private val handler = Handler(Looper.getMainLooper())
     @RequiresApi(Build.VERSION_CODES.O)
     @SuppressLint("ClickableViewAccessibility")
-    private fun setTouchListener(brailleKey: FrameLayout, circleTextView: TextView, keyId: Int) {
+    private fun setTouchListener(
+        brailleKey: FrameLayout,
+        circleTextView: TextView,
+        keyId: Int,
+        editText: EditText
+    ) {
         brailleKey.setOnTouchListener { _, event ->
             when (event.action) {
                 MotionEvent.ACTION_DOWN -> {
@@ -197,6 +222,7 @@ class DetailActivity : AppCompatActivity(), TextToSpeech.OnInitListener  {
                         if (typedLetter == '#') {
                             isNumberMode = true // Aktifkan mode angka
                             Log.d("Mode", "Switched to number mode")
+                            textToSpeech.speak("Mode angka", TextToSpeech.QUEUE_FLUSH, null, null)
                         } else {
                             val outputChar = if (isNumberMode) {
                                 // Map huruf a-j menjadi angka 1-9, 0
@@ -209,13 +235,19 @@ class DetailActivity : AppCompatActivity(), TextToSpeech.OnInitListener  {
                                 outputString = it.toString()  // Replace with the new letter/number
                                 outputTextView.text = outputString
 
+                                editText.append(it.toString())
+
                                 // Speak the letter or number
                                 textToSpeech.speak(it.toString(), TextToSpeech.QUEUE_FLUSH, null, null)
                             }
 
                             // Jika bukan angka, matikan mode angka
-                            if (typedLetter !in 'a'..'j') {
+                            if (isNumberMode && outputChar == null) {
                                 isNumberMode = false
+                                Log.d("Mode", "Switched to letter mode")
+
+                                // Tambahkan suara saat mode huruf diaktifkan
+                                textToSpeech.speak("Mode huruf", TextToSpeech.QUEUE_FLUSH, null, null)
                             }
                         }
 
@@ -298,17 +330,37 @@ class DetailActivity : AppCompatActivity(), TextToSpeech.OnInitListener  {
     }
 
     // Fungsi ketika swipe ke kanan
+    // Fungsi ketika swipe ke kanan
     private fun onSwipeRight() {
-        // Logika untuk swipe ke kanan
-        println("Swipe ke kanan")
+        println("Swipe ke kanan: Tambah spasi")
+        outputString += " " // Tambahkan spasi pada output
+
+        // Update EditText dengan menambahkan spasi
+        editText.append(" ")
+        textToSpeech.speak("Spasi", TextToSpeech.QUEUE_FLUSH, null, null)
+        println("Swipe ke kanan selesai")
     }
 
     // Fungsi ketika swipe ke kiri
     private fun onSwipeLeft() {
-        // Logika untuk swipe ke kiri
-        println("Swipe ke kiri")
+        println("Swipe ke kiri: Hapus karakter terakhir")
+        if (editText.text.isNotEmpty()) {
+            val currentText = editText.text.toString()
+            val updatedText = currentText.dropLast(1) // Hapus karakter terakhir
+            editText.setText(updatedText) // Perbarui teks di EditText
+            editText.setSelection(updatedText.length) // Pindahkan kursor ke akhir teks
+            textToSpeech.speak("Hapus karakter", TextToSpeech.QUEUE_FLUSH, null, null)
+        }else {
+            // Jika tidak ada karakter untuk dihapus, berikan umpan balik
+            textToSpeech.speak(
+                "Tidak ada yang dihapus",
+                TextToSpeech.QUEUE_FLUSH,
+                null,
+                null
+            )
+        }
+        println("Swipe ke kiri selesai")
     }
-
     // Fungsi ketika swipe ke bawah
     private fun onSwipeDown() {
         // Logika untuk swipe ke bawah
