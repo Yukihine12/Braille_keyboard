@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:background="@color/background"
-    android:paddingTop="15dp"
+    android:paddingTop="5dp"
     android:layout_height="match_parent"
     tools:context=".DetailActivity">
 
@@ -31,9 +31,9 @@
         <!-- Buletan di kiri atas -->
         <ImageView
             android:id="@+id/buletTopLeft"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_marginTop="40dp"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_marginTop="5dp"
             android:layout_marginStart="50dp"
             android:src="@drawable/bulet" />
 
@@ -42,30 +42,30 @@
         <!-- Buletan di kiri bawah -->
         <ImageView
             android:id="@+id/buletCenterLeft"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
             android:layout_below="@id/buletTopLeft"
             android:layout_alignStart="@id/buletTopLeft"
             android:layout_marginStart="56dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="30dp"
             android:layout_marginEnd="50dp"
             android:src="@drawable/bulet" />
 
         <!-- Buletan di kanan atas -->
         <ImageView
             android:id="@+id/buletBottomLeft"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
             android:layout_below="@id/buletCenterLeft"
             android:layout_alignStart="@id/buletCenterLeft"
             android:layout_marginStart="-57dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="30dp"
             android:src="@drawable/bulet" />
 
         <ImageView
             android:id="@+id/buletTopRight"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
             android:layout_alignTop="@id/buletTopLeft"
             android:layout_alignParentEnd="true"
             android:layout_marginEnd="50dp"
@@ -77,22 +77,22 @@
 
         <ImageView
             android:id="@+id/buletCenterRight"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
             android:layout_below="@id/buletTopRight"
             android:layout_alignEnd="@id/buletTopRight"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="30dp"
             android:layout_marginEnd="56dp"
             android:src="@drawable/bulet" />
 
         <!-- Nomor di tengah -->
         <ImageView
             android:id="@+id/buletBottomRight"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
             android:layout_below="@id/buletCenterRight"
             android:layout_alignEnd="@id/buletCenterRight"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="30dp"
             android:layout_marginEnd="-60dp"
             android:src="@drawable/bulet" />
 

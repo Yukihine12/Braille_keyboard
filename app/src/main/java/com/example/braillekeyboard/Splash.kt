@@ -19,10 +19,7 @@ class Splash : AppCompatActivity() {
 
         Log.d("SplashActivity", "onCreate called")
 
-        window.setFlags(
-            WindowManager.LayoutParams.FLAG_FULLSCREEN,
-            WindowManager.LayoutParams.FLAG_FULLSCREEN
-        )
+
 
         enableEdgeToEdge()
 

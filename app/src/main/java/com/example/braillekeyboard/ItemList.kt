@@ -25,9 +25,12 @@ class ItemList : AppCompatActivity() {
         recyclerView.layoutManager = LinearLayoutManager(this)
 
         itemList = listOf(
-            Item("Introduction to Braille", "6:17 hours       |      7 level", R.drawable.play),
-            Item("Letter", "10:17 min", R.drawable.play),
-
+            Item("Level 1", "2 Menit       |      3 huruf", R.drawable.play),
+            Item("Level 2", "3 Menit       |      4 huruf", R.drawable.play),
+            Item("Level 3", "4 Menit       |      5 huruf", R.drawable.play),
+            Item("Level 4", "5 Menit       |      6 huruf", R.drawable.play),
+            Item("Level 5", "7 Menit       |      8 huruf", R.drawable.play),
+            Item("Level 6", "8 Menit       |      Angka", R.drawable.play),
         )
 
         adapter = ItemAdapter(itemList)
