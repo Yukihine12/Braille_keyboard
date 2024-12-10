@@ -138,6 +138,9 @@ class DetailActivity : AppCompatActivity(), TextToSpeech.OnInitListener  {
 
         editText = findViewById(R.id.editText)
 
+        editText.showSoftInputOnFocus = false
+        editText.isCursorVisible = false
+
         setTouchListener(brailleKey1, circleTextView1, 1, editText)
         setTouchListener(brailleKey2, circleTextView2, 2, editText)
         setTouchListener(brailleKey3, circleTextView3, 3, editText)
@@ -253,7 +256,7 @@ class DetailActivity : AppCompatActivity(), TextToSpeech.OnInitListener  {
 
                         Log.d("Output", "Current Output after delay: $outputString")
 
-                    }, 1000) // 1000 milliseconds = 1 second
+                    }, 700) // 1000 milliseconds = 1 second
                 }
                 MotionEvent.ACTION_UP, MotionEvent.ACTION_CANCEL -> {
                     pressedKeys.remove(keyId)  // Remove keyId from the set when it's released
@@ -329,7 +332,7 @@ class DetailActivity : AppCompatActivity(), TextToSpeech.OnInitListener  {
         }
     }
 
-    // Fungsi ketika swipe ke kanan
+
     // Fungsi ketika swipe ke kanan
     private fun onSwipeRight() {
         println("Swipe ke kanan: Tambah spasi")
