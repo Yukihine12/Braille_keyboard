@@ -13,16 +13,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BrailleKeyboard"
         tools:targetApi="31">
-        <activity
-            android:name=".DetailActivity"
-            android:exported="false"
-            android:screenOrientation="landscape"
-            tools:ignore="DiscouragedApi"/>
-        <activity
-            android:name=".ItemList"
-            android:exported="false"
-            android:screenOrientation="landscape"
-            tools:ignore="DiscouragedApi" />
+
+        <!-- Splash Screen -->
         <activity
             android:name=".Splash"
             android:exported="true"
@@ -34,23 +26,24 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".MainActivity"
-            android:exported="false"
-            android:screenOrientation="landscape"
-            tools:ignore="DiscouragedApi" />
-        <activity
-            android:name=".DictionaryActivity"
-            android:screenOrientation="landscape"
-            tools:ignore="DiscouragedApi" />
-        <activity
-            android:name=".LearningActivity"
-            android:screenOrientation="landscape"
-            tools:ignore="DiscouragedApi" />
-        <activity
-            android:name=".ResumeActivity"
-            android:screenOrientation="landscape"
-            tools:ignore="DiscouragedApi" />
+
+        <!-- Main Activities -->
+        <activity android:name=".ItemList" android:exported="false" android:screenOrientation="landscape" tools:ignore="DiscouragedApi" />
+        <activity android:name=".MainActivity" android:exported="false" android:screenOrientation="landscape" tools:ignore="DiscouragedApi" />
+        <activity android:name=".DetailActivity" android:exported="false" android:screenOrientation="landscape" tools:ignore="DiscouragedApi" />
+        <activity android:name=".DictionaryActivity" android:screenOrientation="landscape" tools:ignore="DiscouragedApi" />
+        <activity android:name=".LearningActivity" android:screenOrientation="landscape" tools:ignore="DiscouragedApi" />
+        <activity android:name=".ResumeActivity" android:screenOrientation="landscape" tools:ignore="DiscouragedApi" />
+
+        <!-- Add missing activities -->
+        <activity android:name=".IntroductionActivity" android:screenOrientation="landscape" tools:ignore="DiscouragedApi" />
+        <activity android:name=".Level1Activity" android:screenOrientation="landscape" tools:ignore="DiscouragedApi" />
+        <activity android:name=".Level2Activity" android:screenOrientation="landscape" tools:ignore="DiscouragedApi" />
+        <activity android:name=".Level3Activity" android:screenOrientation="landscape" tools:ignore="DiscouragedApi" />
+        <activity android:name=".Level4Activity" android:screenOrientation="landscape" tools:ignore="DiscouragedApi" />
+        <activity android:name=".Level5Activity" android:screenOrientation="landscape" tools:ignore="DiscouragedApi" />
+        <activity android:name=".Level6Activity" android:screenOrientation="landscape" tools:ignore="DiscouragedApi" />
+
     </application>
 
 </manifest>

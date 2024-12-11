@@ -25,10 +25,18 @@ import android.os.Vibrator
 import androidx.annotation.RequiresApi
 import android.speech.tts.TextToSpeech
 import android.widget.EditText
+<<<<<<< Updated upstream
 import java.util.Locale
 
 
 class DetailActivity : AppCompatActivity(), TextToSpeech.OnInitListener  {
+=======
+import androidx.core.widget.addTextChangedListener
+import java.util.Locale
+
+
+open class DetailActivity : AppCompatActivity(), TextToSpeech.OnInitListener  {
+>>>>>>> Stashed changes
     @SuppressLint("ClickableViewAccessibility")
 
     private val pressedKeys = mutableSetOf<Int>()  // To track the pressed keys
@@ -162,6 +170,14 @@ class DetailActivity : AppCompatActivity(), TextToSpeech.OnInitListener  {
                 Log.e("TTS", "Text-to-Speech initialization failed!")
             }
         }
+<<<<<<< Updated upstream
+=======
+
+        outputTextView.addTextChangedListener { text ->
+            Log.d("BrailleInput", "User typed: $text")
+            // Pastikan callback di Level1Activity menerima input ini
+        }
+>>>>>>> Stashed changes
 
 
     }

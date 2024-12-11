@@ -23,9 +23,36 @@
             android:layout_centerHorizontal="true"
             android:paddingTop="30dp"
             android:textColor="@color/white"
-            android:text="Bagas"
+            android:text=""
             android:textSize="20sp"
             android:textStyle="bold" />
+
+<<<<<<< Updated upstream
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:textColor="@color/white"
+            android:hint="Ketikan sesuatu..."
+            android:inputType="text"
+            android:focusable="true"/>
+
+
+
+=======
+
+<!--        <TextView-->
+<!--            android:id="@+id/instructionTextView"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_margin="16dp"-->
+<!--            android:gravity="center"-->
+<!--            android:padding="8dp"-->
+<!--            android:text="Instruksi akan muncul di sini"-->
+<!--            android:textColor="@android:color/black"-->
+<!--            android:textSize="18sp" />-->
 
         <EditText
             android:id="@+id/editText"
@@ -40,6 +67,7 @@
 
 
 
+>>>>>>> Stashed changes
         <FrameLayout
             android:id="@+id/braille_key_1"
             android:layout_width="250dp"
