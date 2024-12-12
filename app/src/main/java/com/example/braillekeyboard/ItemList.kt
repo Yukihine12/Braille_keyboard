@@ -25,11 +25,11 @@ class ItemList : AppCompatActivity() {
         recyclerView.layoutManager = LinearLayoutManager(this)
 
         itemList = listOf(
-<<<<<<< Updated upstream
-            Item("Introduction to Braille", "6:17 hours       |      7 level", R.drawable.play),
-            Item("Letter", "10:17 min", R.drawable.play),
-
-=======
+//<<<<<<< Updated upstream
+//            Item("Introduction to Braille", "6:17 hours       |      7 level", R.drawable.play),
+//            Item("Letter", "10:17 min", R.drawable.play),
+//
+//=======
             Item("Introduction to Braille", "---       |      Pengenalan Tata Letak", R.drawable.play),
             Item("Level 1", "2 Menit       |      3 huruf", R.drawable.play),
             Item("Level 2", "3 Menit       |      4 huruf", R.drawable.play),
@@ -37,7 +37,7 @@ class ItemList : AppCompatActivity() {
             Item("Level 4", "5 Menit       |      6 huruf", R.drawable.play),
             Item("Level 5", "7 Menit       |      8 huruf", R.drawable.play),
             Item("Level 6", "8 Menit       |      Angka", R.drawable.play),
->>>>>>> Stashed changes
+//>>>>>>> Stashed changes
         )
 
         adapter = ItemAdapter(itemList)

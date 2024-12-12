@@ -12,4 +12,6 @@
     <string name="_5">5</string>
     <string name="_4">4</string>
     <string name="_3">3</string>
+    <string name="icon_desc">icon_desc</string>
+    <string name="image_desc">image_desc</string>
 </resources>

@@ -27,21 +27,21 @@
             android:textSize="20sp"
             android:textStyle="bold" />
 
-<<<<<<< Updated upstream
-        <EditText
-            android:id="@+id/editText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_alignParentBottom="true"
-            android:textColor="@color/white"
-            android:hint="Ketikan sesuatu..."
-            android:inputType="text"
-            android:focusable="true"/>
+<!--<<<<<<< Updated upstream-->
+<!--        <EditText-->
+<!--            android:id="@+id/editText"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_centerHorizontal="true"-->
+<!--            android:layout_alignParentBottom="true"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:hint="Ketikan sesuatu..."-->
+<!--            android:inputType="text"-->
+<!--            android:focusable="true"/>-->
 
 
 
-=======
+<!--=======-->
 
 <!--        <TextView-->
 <!--            android:id="@+id/instructionTextView"-->
@@ -67,7 +67,7 @@
 
 
 
->>>>>>> Stashed changes
+<!--&gt;>>>>>> Stashed changes-->
         <FrameLayout
             android:id="@+id/braille_key_1"
             android:layout_width="250dp"

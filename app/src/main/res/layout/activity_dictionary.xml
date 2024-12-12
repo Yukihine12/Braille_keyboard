@@ -1,82 +1,30 @@
-<?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:background="@color/background"
-    tools:ignore="SpeakableTextPresentCheck">
+    tools:context=".ItemList">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Dictionary"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:padding="16dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:scrollbars="vertical"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp"/>
 
-        <!-- Alphabet Image in Center Top -->
-        <ImageView
-            android:id="@+id/alphabet"
-            android:layout_width="120dp"
-            android:layout_height="60dp"
-            android:layout_marginTop="16dp"
-            android:src="@drawable/alphabet"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="ContentDescription" />
-
-        <ImageView
-            android:id="@+id/abjad"
-            android:layout_width="800dp"
-            android:layout_height="420dp"
-            android:src="@drawable/alfabet"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/alphabet"
-            tools:ignore="ContentDescription" />
-
-        <!-- Main Text in Center -->
-
-        <ImageView
-            android:id="@+id/number"
-            android:layout_width="120dp"
-            android:layout_height="60dp"
-            android:layout_marginTop="64dp"
-            android:paddingTop="40dp"
-            android:src="@drawable/numbers"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/abjad"
-            tools:ignore="ContentDescription" />
-
-        <ImageView
-            android:id="@+id/alpabetnumber"
-            android:layout_width="650dp"
-            android:layout_height="190dp"
-            android:src="@drawable/alfabetnumber"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/number"
-            tools:ignore="ContentDescription" />
-
-
-        <ImageView
-            android:id="@+id/punctuation"
-            android:layout_width="120dp"
-            android:layout_height="60dp"
-            android:src="@drawable/punctuation"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/alpabetnumber"
-            tools:ignore="ContentDescription" />
-
-        <ImageView
-            android:id="@+id/alpabetpunctuation"
-            android:layout_width="400dp"
-            android:layout_height="600dp"
-            android:src="@drawable/alfabetpunctuation"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/punctuation"
-            tools:ignore="ContentDescription" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</ScrollView>
+</LinearLayout>

@@ -43,7 +43,7 @@
         <activity android:name=".Level4Activity" android:screenOrientation="landscape" tools:ignore="DiscouragedApi" />
         <activity android:name=".Level5Activity" android:screenOrientation="landscape" tools:ignore="DiscouragedApi" />
         <activity android:name=".Level6Activity" android:screenOrientation="landscape" tools:ignore="DiscouragedApi" />
-
+        <activity android:name=".DictionaryDetail" android:screenOrientation="landscape" tools:ignore="DiscouragedApi" />
     </application>
 
 </manifest>
