@@ -2,6 +2,7 @@ package com.example.braillekeyboard
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -39,6 +40,14 @@ class DictionaryActivity : AppCompatActivity() {
             navigateToDetailActivity(item, position)
         }
         recyclerView.adapter = adapter
+
+        val back: TextView = findViewById(R.id.back)
+        back.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP  // Clear all previous activities from the stack
+            startActivity(intent)
+            finish()  // Menutup aktivitas saat ini
+        }
     }
 
     private fun getDrawableIdForNumber(number: Int): Int {
@@ -96,4 +105,5 @@ class DictionaryActivity : AppCompatActivity() {
         intent.putParcelableArrayListExtra("ITEM_LIST", ArrayList(itemList))  // Kirimkan itemList
         startActivity(intent)
     }
+
 }
